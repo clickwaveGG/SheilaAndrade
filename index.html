@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheila Andrade — Corretora de Imóveis · Irecê, BA</title>
+  <meta name="description" content="Sheila Andrade, corretora de imóveis em Irecê, BA. Associada RE/MAX Gardense. Conheça a história e o trabalho de quem cuida do seu sonho com seriedade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────
+       TOKENS — paleta única, limpa
+    ───────────────────────────────────────── */
+    :root {
+      --bg:         #F7F4EF;       /* creme quente — base de tudo */
+      --bg-alt:     #EFEBE4;       /* creme ligeiramente mais escuro */
+      --dark:       #1A1A26;       /* quase preto — texto principal */
+      --mid:        #6A6A7A;       /* cinza-arroxeado — texto secundário */
+      --light:      #A8A8B8;       /* texto discreto */
+      --gold:       #B08A40;       /* ouro envelhecido — assinatura Sheila */
+      --gold-light: rgba(176,138,64,0.12);
+      --red:        #C8001A;       /* vermelho RE/MAX — uso pontual */
+      --border:     rgba(26,26,38,0.09);
+      --white:      #FFFFFF;
+
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+
+      --pad:        clamp(72px, 9vw, 128px);
+      --radius:     12px;
+    }
+
+    /* ─────────────────────────────────────────
+       RESET
+    ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 64px);
+    }
+
+    /* ─────────────────────────────────────────
+       NAVBAR
+    ───────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all 0.4s ease;
+    }
+    .nav.scrolled {
+      background: rgba(247,244,239,0.95);
+      backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+    }
+    .nav__sub {
+      font-size: 11px;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .nav__links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav__link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--mid);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav__link:hover { color: var(--dark); }
+
+    .nav__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 9px 20px;
+      transition: all 0.25s;
+      background: transparent;
+    }
+    .nav__cta:hover {
+      border-color: var(--dark);
+      background: var(--dark);
+      color: var(--bg);
+    }
+
+    @media (max-width: 720px) {
+      .nav__links { display: none; }
+    }
+
+    /* ─────────────────────────────────────────
+       HERO — identidade, não venda
+    ───────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(56px, 8vw, 96px);
+      padding-top: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Linha decorativa vertical */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: clamp(24px, 5vw, 64px);
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    }
+
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(48px, 6vw, 96px);
+      align-items: end;
+      width: 100%;
+    }
+
+    @media (max-width: 860px) {
+      .hero__inner { grid-template-columns: 1fr; }
+    }
+
+    .hero__content { padding-left: 28px; }
+
+    .hero__label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .hero__label-dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .hero__label-text {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .hero__headline {
+      font-family: var(--serif);
+      font-size: clamp(44px, 5.5vw, 80px);
+      font-weight: 500;
+      line-height: 1.08;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+    .hero__headline em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .hero__desc {
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.8;
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 440px;
+    }
+
+    .hero__scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      right: clamp(24px, 5vw, 64px);
+      writing-mode: vertical-rl;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero__scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--light), transparent);
+    }
+
+    /* Foto hero */
+    .hero__photo-wrap {
+      position: relative;
+      align-self: end;
+    }
+    .hero__photo-frame {
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--bg-alt);
+      position: relative;
+    }
+    .hero__photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    /* Placeholder */
+    .hero__photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+      background: linear-gradient(160deg, #e8e1d8 0%, #d4cbc0 100%);
+    }
+    .hero__photo-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(247,244,239,0.92);
+      backdrop-filter: blur(12px);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero__photo-tag-dot {
+      width: 8px; height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .hero__photo-tag-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .hero__photo-tag-sub {
+      font-size: 11px;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    @media (max-width: 860px) {
+      .hero__photo-wrap { display: none; }
+      .hero__content { padding-left: 0; }
+    }
+
+    /* ─────────────────────────────────────────
+       DIVISOR com número
+    ───────────────────────────────────────── */
+    .chapter-mark {
+      padding: 48px 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .chapter-mark__line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .chapter-mark__label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--light);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ─────────────────────────────────────────
+       SEÇÃO: RAÍZES — "de onde vem a Sheila"
+    ───────────────────────────────────────── */
+    .raizes {
+      padding: var(--pad) 0;
+    }
+    .raizes__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(48px, 7vw, 112px);
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .raizes__inner { grid-template-columns: 1fr; }
+    }
+
+    .raizes__aside {
+      position: sticky;
+      top: 100px;
+    }
+    .raizes__number {
+      font-family: var(--serif);
+      font-size: clamp(96px, 14vw, 160px);
+      font-weight: 700;
+      color: var(--bg-alt);
+      line-height: 1;
+      margin-bottom: -20px;
+      user-select: none;
+    }
+    .raizes__photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: var(--bg-alt);
+      position: relative;
+    }
+    .raizes__photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .raizes__photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 60px;
+      background: linear-gradient(135deg, #e8e1d8, #d4cbc0);
+    }
+    .raizes__photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(26,26,38,0.7) 0%, transparent 100%);
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      font-style: italic;
+    }
+
+    .raizes__text {}
+
+    .section-kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--gold);
+    }
+
+    .section-headline {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .section-headline em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .body-text {
+      font-size: clamp(15px, 1.5vw, 16.5px);
+      line-height: 1.85;
+      color: var(--mid);
+      font-weight: 300;
+    }
+    .body-text + .body-text { margin-top: 18px; }
+    .body-text strong {
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* ─────────────────────────────────────────
+       SEÇÃO: MÃE — capítulo emocional
+    ───────────────────────────────────────── */
+    .mae {
+      padding: var(--pad) 0;
+      background: var(--bg-alt);
+      position: relative;
+      overflow: hidden;
+    }
+    .mae::before {
+      content: '"';
+      position: absolute;
+      top: -40px;
+      left: clamp(24px, 5vw, 64px);
+      font-family: var(--serif);
+      font-size: 360px;
+      font-weight: 700;
+      color: rgba(26,26,38,0.04);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .mae__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mae__quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+    .mae__quote em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .mae__body {
+      text-align: left;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 640px) {
+      .mae__body { grid-template-columns: 1fr; }
+    }
+
+    .mae__card {
+      padding: 32px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .mae__card-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .mae__card-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .mae__card-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────────────
+       SEÇÃO: PROFISSIONAL — credibilidade
+    ───────────────────────────────────────── */
+    .profissional {
+      padding: var(--pad) 0;
+    }
+    .profissional__inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(48px, 7vw, 112px);
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .profissional__inner { grid-template-columns: 1fr; }
+    }
+
+    .profissional__visual {
+      position: relative;
+    }
+    .profissional__photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--bg-alt);
+    }
+    .profissional__photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .profissional__photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 60px;
+      background: linear-gradient(160deg, #e4ddd5, #cfc8be);
+    }
+
+    .profissional__badge {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      background: var(--dark);
+      color: var(--bg);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      text-align: center;
+      box-shadow: 0 12px 36px rgba(26,26,38,0.18);
+    }
+    .profissional__badge-logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .profissional__badge-dot {
+      width: 8px; height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+    .profissional__badge-brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--bg);
+    }
+    .profissional__badge-sub {
+      font-size: 10px;
+      color: rgba(247,244,239,0.5);
+      letter-spacing: 0.08em;
+    }
+
+    .profissional__metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .metric-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .metric-row__label {
+      font-size: 13px;
+      color: var(--mid);
+      font-weight: 400;
+    }
+    .metric-row__value {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    /* ─────────────────────────────────────────
+       SEÇÃO: VALORES — o que move ela
+    ───────────────────────────────────────── */
+    .valores {
+      padding: var(--pad) 0;
+      background: var(--bg-alt);
+    }
+    .valores__header {
+      max-width: 520px;
+      margin-bottom: 64px;
+    }
+    .valores__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .valor-item {
+      background: var(--bg);
+      padding: 40px 36px;
+      transition: background 0.25s;
+    }
+    .valor-item:hover { background: var(--white); }
+    .valor-item__number {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+    .valor-item__title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .valor-item__text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────────────
+       SEÇÃO: DEPOIMENTOS — humanidade, não conversão
+    ───────────────────────────────────────── */
+    .vozes {
+      padding: var(--pad) 0;
+    }
+    .vozes__header {
+      max-width: 480px;
+      margin-bottom: 64px;
+    }
+    .vozes__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .voz-card {
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg);
+      transition: border-color 0.25s;
+    }
+    .voz-card:hover { border-color: var(--gold); }
+
+    .voz-card__text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--dark);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .voz-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .voz-card__initial {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      border: 1px solid rgba(176,138,64,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .voz-card__name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+    .voz-card__detail {
+      font-size: 11px;
+      color: var(--light);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─────────────────────────────────────────
+       SEÇÃO: CONTATO — suave, sem pressão
+    ───────────────────────────────────────── */
+    .contato {
+      padding: var(--pad) 0;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .contato::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(247,244,239,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,244,239,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .contato__inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(48px, 7vw, 96px);
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .contato__inner { grid-template-columns: 1fr; }
+    }
+
+    .contato__left {}
+    .contato__kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contato__kicker::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1.5px;
+      background: var(--gold);
+    }
+    .contato__headline {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.8vw, 48px);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--bg);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .contato__headline em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+    .contato__sub {
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(247,244,239,0.5);
+      font-weight: 300;
+    }
+
+    .contato__right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: rgba(247,244,239,0.05);
+      border: 1px solid rgba(247,244,239,0.08);
+      border-radius: var(--radius);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .contact-link:hover {
+      background: rgba(247,244,239,0.09);
+      border-color: rgba(176,138,64,0.4);
+    }
+    .contact-link__icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      background: rgba(247,244,239,0.07);
+      flex-shrink: 0;
+    }
+    .contact-link__label {
+      font-size: 12px;
+      color: rgba(247,244,239,0.4);
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .contact-link__value {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(247,244,239,0.9);
+    }
+    .contact-link__arrow {
+      margin-left: auto;
+      color: rgba(247,244,239,0.25);
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+    .contact-link:hover .contact-link__arrow {
+      transform: translateX(4px);
+      color: var(--gold);
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    .footer {
+      background: #111120;
+      padding: 40px 0;
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer__left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .footer__dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+    .footer__name {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: rgba(247,244,239,0.6);
+    }
+    .footer__copy {
+      font-size: 12px;
+      color: rgba(247,244,239,0.2);
+    }
+    .footer__links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer__link {
+      font-size: 12px;
+      color: rgba(247,244,239,0.35);
+      transition: color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .footer__link:hover { color: var(--gold); }
+
+    /* ─────────────────────────────────────────
+       WA FLOAT — discreto
+    ───────────────────────────────────────── */
+    .wa {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 99;
+    }
+    .wa__btn {
+      width: 54px; height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+    }
+    .wa__btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+    }
+    .wa__btn svg { width: 26px; height: 26px; fill: white; }
+
+    /* ─────────────────────────────────────────
+       ANIMAÇÕES
+    ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <div>
+          <div class="nav__name">Sheila Andrade</div>
+          <div class="nav__sub">Corretora · RE/MAX Gardense · Irecê</div>
+        </div>
+        <nav class="nav__links">
+          <a href="#raizes" class="nav__link">A história</a>
+          <a href="#profissional" class="nav__link">O trabalho</a>
+          <a href="#valores" class="nav__link">O que acredito</a>
+          <a href="#contato" class="nav__link">Contato</a>
+        </nav>
+        <a href="https://wa.me/5574999999999" class="nav__cta">
+          Conversar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__content reveal">
+          <div class="hero__label">
+            <span class="hero__label-dot"></span>
+            <span class="hero__label-text">RE/MAX Gardense · Irecê, Bahia</span>
+          </div>
+          <h1 class="hero__headline">
+            Não existe lar<br>
+            sem alguém que<br>
+            <em>cuide de você.</em>
+          </h1>
+          <p class="hero__desc">
+            Sou Sheila Andrade. Trabalho com imóveis porque acredito que
+            encontrar o lugar certo muda a vida das pessoas. Cada processo
+            que acompanho carrega o mesmo cuidado — independente de quem
+            você é ou de onde você vem.
+          </p>
+        </div>
+
+        <div class="hero__photo-wrap reveal reveal-delay-2">
+          <div class="hero__photo-frame">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260325_185637_b71aa8d1-c6d0-4512-aec1-1fc68cb8609d_min.webp" alt="Sheila Andrade — Corretora de Imóveis">
+          </div>
+          <div class="hero__photo-tag">
+            <span class="hero__photo-tag-dot"></span>
+            <div>
+              <div class="hero__photo-tag-text">Sheila Andrade</div>
+              <div class="hero__photo-tag-sub">Corretora associada · RE/MAX Gardense</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="hero__scroll-hint">rolar</div>
+  </section>
+
+  <!-- RAÍZES -->
+  <section class="raizes" id="raizes">
+    <div class="container">
+      <div class="chapter-mark">
+        <div class="chapter-mark__line"></div>
+        <span class="chapter-mark__label">Capítulo 01 — As raízes</span>
+        <div class="chapter-mark__line"></div>
+      </div>
+
+      <div class="raizes__inner">
+
+        <div class="raizes__aside reveal">
+          <div class="raizes__number">01</div>
+          <div class="raizes__photo">
+            <!-- Substitua pelo img real -->
+            <div class="raizes__photo-placeholder">🌵</div>
+            <div class="raizes__photo-caption">Irecê, Bahia — onde tudo começa</div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="section-kicker">De onde vem a Sheila</div>
+          <h2 class="section-headline">
+            Irecê não é só onde<br>
+            eu trabalho. É onde<br>
+            <em>eu pertenço.</em>
+          </h2>
+          <p class="body-text">
+            Cresci nessa cidade. Conheço suas ruas de memória, sei qual bairro tem mais movimento de manhã,
+            qual região cresceu nos últimos anos, onde é bom criar filho, onde tem mais silêncio à noite.
+            Esse tipo de coisa não se aprende em curso — se aprende vivendo.
+          </p>
+          <p class="body-text" style="margin-top:18px;">
+            Quando entrei no mercado imobiliário, não precisei estudar o território.
+            <strong>O território já era parte de mim.</strong> E é esse conhecimento que carrego
+            para cada conversa, cada visita, cada negociação.
+          </p>
+          <p class="body-text" style="margin-top:18px;">
+            Ser corretora aqui não é só profissão. É um comprometimento com a cidade
+            que me deu tudo que tenho.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MÃE -->
+  <section class="mae" id="mae">
+    <div class="container">
+      <div class="chapter-mark">
+        <div class="chapter-mark__line"></div>
+        <span class="chapter-mark__label">Capítulo 02 — A mãe</span>
+        <div class="chapter-mark__line"></div>
+      </div>
+
+      <div class="mae__inner">
+        <blockquote class="mae__quote reveal">
+          "Quando você tem filhos, você aprende o que é lar de verdade.<br>
+          Aprende que quatro paredes são <em>muito mais que isso.</em>"
+        </blockquote>
+
+        <div class="mae__body">
+          <div class="mae__card reveal reveal-delay-1">
+            <div class="mae__card-icon">👦🏽👦🏽</div>
+            <div class="mae__card-title">Mãe de dois meninos</div>
+            <p class="mae__card-text">
+              Ser mãe me ensinou a olhar para um imóvel com outros olhos.
+              Penso na segurança da rua, na escola por perto, no quintal onde
+              as crianças podem correr. Esse olhar vai junto comigo no trabalho.
+            </p>
+          </div>
+          <div class="mae__card reveal reveal-delay-2">
+            <div class="mae__card-icon">💛</div>
+            <div class="mae__card-title">Cuidado que vem do coração</div>
+            <p class="mae__card-text">
+              Cuido das pessoas que confiam em mim da mesma forma que cuido
+              dos meus filhos: com presença, com atenção e com muita honestidade.
+              Não sei trabalhar de outro jeito.
+            </p>
+          </div>
+          <div class="mae__card reveal reveal-delay-3">
+            <div class="mae__card-icon">💪🏽</div>
+            <div class="mae__card-title">Independente, do jeito que escolhi</div>
+            <p class="mae__card-text">
+              Construí minha carreira com autonomia e muito trabalho. Essa
+              independência me dá liberdade para ser honesta — sem pressão
+              para fechar, sem compromisso com o que não é certo pra você.
+            </p>
+          </div>
+          <div class="mae__card reveal reveal-delay-4">
+            <div class="mae__card-icon">🏡</div>
+            <div class="mae__card-title">Lar é onde a história acontece</div>
+            <p class="mae__card-text">
+              Cada imóvel que passo adiante é o palco onde alguém vai criar
+              memórias, criar filhos, envelhecer, recomeçar. Não me esqueço
+              disso em nenhum momento do processo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAL -->
+  <section class="profissional" id="profissional">
+    <div class="container">
+      <div class="chapter-mark">
+        <div class="chapter-mark__line"></div>
+        <span class="chapter-mark__label">Capítulo 03 — A profissional</span>
+        <div class="chapter-mark__line"></div>
+      </div>
+
+      <div class="profissional__inner">
+
+        <div class="profissional__visual reveal">
+          <div class="profissional__photo">
+            <!-- Substitua pelo img real -->
+            <div class="profissional__photo-placeholder">📷</div>
+          </div>
+          <div class="profissional__badge">
+            <div class="profissional__badge-logo">
+              <span class="profissional__badge-dot"></span>
+              <span class="profissional__badge-brand">RE/MAX</span>
+            </div>
+            <div class="profissional__badge-sub">Gardense · Irecê, BA</div>
+          </div>
+
+          <div class="profissional__metrics">
+            <div class="metric-row">
+              <span class="metric-row__label">Associada</span>
+              <span class="metric-row__value">RE/MAX Gardense</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-row__label">Região</span>
+              <span class="metric-row__value">Irecê e entorno, BA</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-row__label">Especialidade</span>
+              <span class="metric-row__value">Residencial e terrenos</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-row__label">Atendimento</span>
+              <span class="metric-row__value">Personalizado, do início ao fim</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="section-kicker">O trabalho</div>
+          <h2 class="section-headline">
+            Seriedade não é<br>
+            um diferencial.<br>
+            <em>É o mínimo.</em>
+          </h2>
+          <p class="body-text">
+            Ser associada à RE/MAX Gardense me dá acesso à maior rede imobiliária do mundo —
+            mas o que entrego vai além da marca. <strong>Entrego presença</strong>.
+            Estou no processo do começo ao fim, respondo quando me chamam, digo a verdade
+            quando não é o que a pessoa quer ouvir.
+          </p>
+          <p class="body-text" style="margin-top:18px;">
+            Não trabalho com quantidade. Trabalho com atenção. Cada pessoa que me procura
+            sabe que vai ter alguém de verdade do outro lado — não um script, não uma
+            proposta genérica.
+          </p>
+          <p class="body-text" style="margin-top:18px;">
+            Minha reputação em Irecê foi construída uma conversa de cada vez.
+            E é assim que vai continuar sendo.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores" id="valores">
+    <div class="container">
+      <div class="chapter-mark">
+        <div class="chapter-mark__line"></div>
+        <span class="chapter-mark__label">Capítulo 04 — O que acredito</span>
+        <div class="chapter-mark__line"></div>
+      </div>
+
+      <div class="valores__header reveal">
+        <div class="section-kicker">Princípios</div>
+        <h2 class="section-headline">
+          O que guia<br>
+          <em>cada passo do meu trabalho.</em>
+        </h2>
+      </div>
+
+      <div class="valores__grid">
+        <div class="valor-item reveal">
+          <div class="valor-item__number">01</div>
+          <div class="valor-item__title">Honestidade acima de tudo</div>
+          <p class="valor-item__text">
+            Prefiro perder uma venda a ganhar a confiança de alguém com uma
+            informação desonesta. Minha palavra tem peso — e quero manter assim.
+          </p>
+        </div>
+        <div class="valor-item reveal reveal-delay-1">
+          <div class="valor-item__number">02</div>
+          <div class="valor-item__title">Presença de verdade</div>
+          <p class="valor-item__text">
+            Atendimento não termina na assinatura. Fico disponível, respondo,
+            acompanho. Porque sei que o processo tem muita emoção envolvida.
+          </p>
+        </div>
+        <div class="valor-item reveal reveal-delay-2">
+          <div class="valor-item__number">03</div>
+          <div class="valor-item__title">Sem pressão, nunca</div>
+          <p class="valor-item__text">
+            Não trabalho forçando decisão. Uma compra de imóvel é grande demais
+            para isso. O tempo certo de cada pessoa é o tempo que eu respeito.
+          </p>
+        </div>
+        <div class="valor-item reveal reveal-delay-3">
+          <div class="valor-item__number">04</div>
+          <div class="valor-item__title">Compromisso com a cidade</div>
+          <p class="valor-item__text">
+            Cada imóvel que fica nas mãos certas fortalece Irecê. Trabalho
+            pensando no que é bom para as famílias que vivem e crescem aqui.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOZES -->
+  <section class="vozes">
+    <div class="container">
+      <div class="chapter-mark">
+        <div class="chapter-mark__line"></div>
+        <span class="chapter-mark__label">O que dizem</span>
+        <div class="chapter-mark__line"></div>
+      </div>
+
+      <div class="vozes__header reveal">
+        <div class="section-kicker">Vozes de quem passou pela Sheila</div>
+        <h2 class="section-headline">
+          Palavras de quem<br>
+          <em>viveu o processo.</em>
+        </h2>
+      </div>
+
+      <div class="vozes__grid">
+        <div class="voz-card reveal">
+          <p class="voz-card__text">
+            "A Sheila não tratou a gente como clientes. Tratou como família.
+            Teve paciência com todas as nossas dúvidas, foi completamente transparente
+            e esteve presente até depois da gente ter as chaves na mão."
+          </p>
+          <div class="voz-card__author">
+            <div class="voz-card__initial">M</div>
+            <div>
+              <div class="voz-card__name">Mariana S.</div>
+              <div class="voz-card__detail">Irecê, BA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="voz-card reveal reveal-delay-1">
+          <p class="voz-card__text">
+            "O que me surpreendeu foi a honestidade dela. Ela me disse quando
+            um imóvel não era o ideal pra mim — mesmo tendo interesse na venda.
+            Isso diz muito sobre o caráter de uma profissional."
+          </p>
+          <div class="voz-card__author">
+            <div class="voz-card__initial">C</div>
+            <div>
+              <div class="voz-card__name">Carlos F.</div>
+              <div class="voz-card__detail">Irecê, BA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="voz-card reveal reveal-delay-2">
+          <p class="voz-card__text">
+            "Eu estava sozinha nesse processo e me senti amparada. Ela explicou cada
+            etapa com calma, sem me deixar perdida. Profissional com alma —
+            é assim que defino a Sheila."
+          </p>
+          <div class="voz-card__author">
+            <div class="voz-card__initial">A</div>
+            <div>
+              <div class="voz-card__name">Andressa L.</div>
+              <div class="voz-card__detail">Irecê, BA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="contato__inner">
+        <div class="reveal">
+          <div class="contato__kicker">Vamos conversar</div>
+          <h2 class="contato__headline">
+            Se você quiser<br>
+            conversar, <em>estou<br>
+            por aqui.</em>
+          </h2>
+          <p class="contato__sub">
+            Sem compromisso. Pode ser uma dúvida, uma ideia ainda no começo,
+            ou simplesmente uma vontade de entender como funciona. Toda conversa
+            começa do mesmo lugar: uma pessoa querendo ajudar outra.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <a href="https://wa.me/5574999999999?text=Olá%20Sheila!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar." class="contact-link">
+            <div class="contact-link__icon">💬</div>
+            <div>
+              <div class="contact-link__label">WhatsApp</div>
+              <div class="contact-link__value">(74) 99999-9999</div>
+            </div>
+            <span class="contact-link__arrow">→</span>
+          </a>
+
+          <a href="https://www.instagram.com/sheilabonfim_/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link__icon">📸</div>
+            <div>
+              <div class="contact-link__label">Instagram</div>
+              <div class="contact-link__value">@sheilabonfim_</div>
+            </div>
+            <span class="contact-link__arrow">→</span>
+          </a>
+
+          <div class="contact-link" style="cursor:default;">
+            <div class="contact-link__icon">📍</div>
+            <div>
+              <div class="contact-link__label">Localização</div>
+              <div class="contact-link__value">Irecê, Bahia — RE/MAX Gardense</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <span class="footer__dot"></span>
+          <span class="footer__name">Sheila Andrade · Corretora de Imóveis</span>
+        </div>
+        <div class="footer__copy">© 2025 · RE/MAX Gardense · Irecê, BA</div>
+        <div class="footer__links">
+          <a href="https://www.instagram.com/sheilabonfim_/" target="_blank" class="footer__link">Instagram</a>
+          <a href="https://wa.me/5574999999999" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <div class="wa">
+    <a href="https://wa.me/5574999999999?text=Olá%20Sheila!" class="wa__btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    // Navbar
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
